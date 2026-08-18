@@ -2,8 +2,19 @@ name: Validate polyglot terrarium
 
 on:
   pull_request:
+    paths:
+      - "**.tf"
+      - "api/**"
+      - "ecology/**"
+      - ".github/workflows/validate.yml"
   push:
     branches: [main]
+    paths:
+      - "**.tf"
+      - "api/**"
+      - "ecology/**"
+      - ".github/workflows/validate.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,7 +41,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
-      - run: gofmt -w -d .
+      - run: test -z "$(gofmt -l .)"
       - run: go test ./...
 
   lua:
