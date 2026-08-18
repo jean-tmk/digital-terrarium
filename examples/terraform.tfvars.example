@@ -1,0 +1,22 @@
+project_name = "digital-terrarium"
+environment  = "dev"
+aws_region   = "us-east-2"
+
+lambda_zip_path       = "api/lambda.zip"
+climate_cycle_schedule = "rate(15 minutes)"
+habitat_ttl_days      = 30
+log_retention_days    = 14
+
+allowed_origins = [
+  "http://localhost:4173",
+  "https://jean-tmk.github.io"
+]
+
+enable_cloudfront       = true
+enable_scheduled_cycles = true
+alarm_email             = null
+
+additional_tags = {
+  Portfolio = "Jean Living Work Archive"
+  Mood      = "Small ecosystem with suspiciously serious infrastructure"
+}

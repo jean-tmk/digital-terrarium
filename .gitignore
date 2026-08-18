@@ -1,0 +1,9 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+.terraform.lock.hcl
+api/bootstrap
+api/lambda.zip
+examples/terraform.tfvars
+.DS_Store
