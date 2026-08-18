@@ -147,7 +147,8 @@ resource "aws_lambda_function" "simulation" {
   architectures = ["arm64"]
   handler       = "bootstrap"
   filename      = var.lambda_zip_path
-  source_code_hash = filebase64sha256(var.lambda_zip_path)
+  source_code_hash = try(filebase64sha256(var.lambda_zip_path), null)
+  publish          = true
   memory_size   = var.lambda_memory_mb
   timeout       = var.lambda_timeout_seconds
 
@@ -171,7 +172,7 @@ resource "aws_lambda_alias" "live" {
   name             = "live"
   description      = "Stable alias for the terrarium API"
   function_name    = aws_lambda_function.simulation.function_name
-  function_version = "$LATEST"
+  function_version = aws_lambda_function.simulation.version
 }
 
 resource "aws_apigatewayv2_api" "habitat" {
