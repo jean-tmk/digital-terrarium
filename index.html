@@ -26,7 +26,7 @@
     @media(max-width:600px){.topbar{padding:0 18px;height:68px}.hero{min-height:auto}.intro{padding:48px 23px 15px}.lede{font-size:14px}.world{min-height:650px}.terrarium{width:116%;height:620px}.sensor{display:none}.toolbar{top:auto;bottom:75px;right:50%;translate:50% 0;display:flex}.tool:after{display:none}.cycle{bottom:18px}.cards{grid-template-columns:1fr}.below{padding:75px 23px}.below-head{gap:25px}.log{gap:25px}.entry{grid-template-columns:62px 1fr}.entry span{display:none}.footrow{gap:20px;flex-wrap:wrap}.topmeta{gap:8px}h1{font-size:67px}.footer{padding-inline:23px}}
   
     /* Illustrated living ecosystem; weather and light remain interactive above it. */
-    .dome{background-image:url('assets/living-glasshouse.png')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+    .dome{background-image:url('assets/living-glasshouse.webp')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
     .ecosystem-art{display:none!important;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;filter:saturate(1.04) contrast(1.02);transform:scale(1.012);transition:filter 1.1s ease,transform 1.1s cubic-bezier(.16,.8,.2,1)}
     .dome>*:not(.firefly):not(.drop):not(.seed-bloom){display:none!important;opacity:0!important;pointer-events:none!important}
     .dome>.mist{z-index:4;mix-blend-mode:screen}.dome>.drop{z-index:8}.dome>.firefly{z-index:7}
@@ -48,7 +48,7 @@
     <section class="hero">
       <div class="intro"><div class="eyebrow">A LIVING WORLD UNDER GLASS</div><h1>Small world,<em>wild heart.</em></h1><p class="lede">An ecosystem that remembers your attention. Bring rain, move the sun, plant something rare—or simply watch a tiny world find its own balance.</p><div class="intro-actions"><button class="pill" id="enter">ENTER THE GLASSHOUSE</button><button class="pill" id="seed">PLANT A MYSTERY SEED</button></div><p class="hint">Your garden is saved to this browser · return tomorrow to see what changed</p></div>
       <div class="world" id="world">
-        <div class="terrarium" id="terrarium"><div class="cap"></div><div class="dome" id="dome"><img class="ecosystem-art" src="assets/living-glasshouse.png" alt="A richly planted living glasshouse with ferns, orchids, moss, a pond, frog, snail and butterflies"><div class="sky"></div><div class="stars"></div><div class="moon"></div><div class="sun"></div><div class="mist"></div><div class="soil" id="soil"></div><div class="pond"></div></div><div class="base"></div>
+        <div class="terrarium" id="terrarium"><div class="cap"></div><div class="dome" id="dome"><img class="ecosystem-art" src="assets/living-glasshouse.webp" alt="A richly planted living glasshouse with ferns, orchids, moss, a pond, frog, snail and butterflies"><div class="sky"></div><div class="stars"></div><div class="moon"></div><div class="sun"></div><div class="mist"></div><div class="soil" id="soil"></div><div class="pond"></div></div><div class="base"></div>
           <div class="sensor a"><small>HUMIDITY</small><strong id="humidity">78</strong><span>% RH</span><div class="meter"><i id="hmeter" style="--v:78%"></i></div></div>
           <div class="sensor b"><small>BIODIVERSITY</small><strong id="bio">12</strong><span> species</span><div class="meter"><i id="bmeter" style="--v:48%"></i></div></div>
         </div>
