@@ -27,7 +27,7 @@
   
     /* Illustrated living ecosystem; weather and light remain interactive above it. */
     .ecosystem-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;filter:saturate(1.04) contrast(1.02);transform:scale(1.012);transition:filter 1.1s ease,transform 1.1s cubic-bezier(.16,.8,.2,1)}
-    .dome>.sky,.dome>.soil,.dome>.plant,.dome>.fern,.dome>.grass,.dome>.vine,.dome>.mushroom,.dome>.pond,.dome>.creature{opacity:0;pointer-events:none}
+    .dome>.sky,.dome>.soil,.dome>.plant,.dome>.fern,.dome>.grass,.dome>.vine,.dome>.mushroom,.dome>.pond,.dome>.creature{display:none!important;opacity:0!important;pointer-events:none!important}
     .dome>.mist{z-index:4;mix-blend-mode:screen}.dome>.drop{z-index:8}.dome>.firefly{z-index:7}
     .dome:before{z-index:10;pointer-events:none}.dome:after{z-index:9;pointer-events:none;background:radial-gradient(circle at var(--sun-x) var(--sun-y),rgba(255,250,205,calc(.28*var(--glow))) 0,rgba(210,239,163,calc(.13*var(--glow))) 12%,transparent 34%);transition:none}
     .night .ecosystem-art{filter:brightness(.32) saturate(.82) hue-rotate(12deg) contrast(1.1)}
