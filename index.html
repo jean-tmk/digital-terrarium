@@ -1,4 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Terrarium — Living Text</title><style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Terrarium — Living Text</title>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;600&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,300&display=swap');
 :root{--paper:#e9eadf;--ink:#101510;--new:#b9ff63;--blue:#6b8cff;--rose:#f27d9d}*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:var(--ink);color:var(--paper);font-family:Manrope,sans-serif}button{font:inherit;color:inherit}.micro{font:500 8px DM Mono;letter-spacing:.15em;text-transform:uppercase}.world{height:100svh;position:relative;overflow:hidden;background:#101510;transition:.8s}.world:before{content:"DIGITAL TERRARIUM / DIGITAL TERRARIUM / DIGITAL TERRARIUM";position:absolute;left:-1vw;bottom:-2.8vw;white-space:nowrap;font:300 9vw/.8 Newsreader;letter-spacing:-.055em;color:#151d17;pointer-events:none}.top{position:absolute;z-index:30;inset:0 0 auto;height:74px;padding:0 28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid #e9eadf24;background:#101510dd;backdrop-filter:blur(10px)}.brand{display:flex;gap:14px;align-items:center}.brand-mark{font:italic 34px Newsreader;color:var(--new)}.brand b{display:block;font:300 18px Newsreader}.cycle{color:#8e998f}.health{justify-self:end}.health i{display:inline-block;width:6px;height:6px;margin-right:8px;background:var(--new);border-radius:50%;box-shadow:0 0 12px var(--new);animation:blink 2.6s steps(2) infinite}@keyframes blink{50%{opacity:.25}}
 .intro{position:absolute;z-index:16;left:4vw;top:50%;width:280px;transform:translateY(-48%)}.eyebrow{color:var(--new)}h1{font:300 clamp(58px,7.5vw,112px)/.72 Newsreader;margin:22px 0 28px;letter-spacing:-.065em}h1 em{color:var(--rose);font-weight:300}.intro p{font-size:11px;line-height:1.8;color:#aab4ab;max-width:255px}.prompt{margin-top:27px;color:#d4dbd2}.prompt span{display:inline-block;color:var(--new);margin-right:9px;animation:nudge 1.5s ease-in-out infinite}@keyframes nudge{50%{transform:translateX(4px)}}
@@ -6,10 +12,115 @@
 .controls{position:absolute;z-index:25;right:25px;top:50%;transform:translateY(-50%);display:grid;border-top:1px solid #e9eadf2d}.controls button{width:78px;padding:14px 5px;border:0;border-bottom:1px solid #e9eadf2d;background:transparent;color:#9da89e;cursor:pointer;text-align:right;font:500 8px DM Mono;letter-spacing:.12em;text-transform:uppercase;transition:.25s}.controls button:hover,.controls button.active{color:var(--new);padding-right:13px}.controls button:before{content:attr(data-symbol);float:left;color:var(--paper);font:300 18px Newsreader;line-height:.5}.readout{position:absolute;z-index:25;right:25px;bottom:24px;text-align:right;color:#7d887f}.readout b{display:block;color:var(--paper);font:300 25px Newsreader;margin-top:3px}.readout div+div{margin-top:12px}
 .card{position:absolute;z-index:40;width:260px;padding:18px;background:var(--paper);color:var(--ink);box-shadow:12px 12px 0 #b9ff6333;opacity:0;pointer-events:none;transform:translate(12px,12px);transition:.25s}.card.show{opacity:1;transform:none}.card .latin{color:#305e47}.card h2{font:300 29px Newsreader;margin:6px 0 8px}.card p{font-size:10px;line-height:1.6;margin:0;color:#4e5b52}.card footer{margin-top:15px;padding-top:10px;border-top:1px solid #1015102c;display:flex;justify-content:space-between;color:#647067}.log-button{position:absolute;z-index:27;left:27px;bottom:24px;border:0;background:transparent;color:#a9b3aa;cursor:pointer}.log-button span{color:var(--rose);margin-right:8px}.log{position:absolute;z-index:45;left:20px;bottom:61px;width:min(390px,calc(100vw - 40px));max-height:66vh;background:var(--paper);color:var(--ink);transform:translateY(20px);opacity:0;pointer-events:none;transition:.35s cubic-bezier(.16,1,.3,1)}.log.open{opacity:1;transform:none;pointer-events:auto}.log header{padding:19px 20px;border-bottom:1px solid #10151030;display:flex;justify-content:space-between}.log h2{font:300 28px Newsreader;margin:3px 0}.log header button{border:0;background:none;cursor:pointer}.entries{padding:0 20px 14px;max-height:45vh;overflow:auto}.entry{padding:15px 0;border-bottom:1px solid #10151020}.entry time{font:500 7px DM Mono;color:#69736b}.entry p{font:300 18px/1.2 Newsreader;margin:6px 0}.entry small{font:500 7px DM Mono;color:#305e47}.toast{position:absolute;z-index:60;left:50%;bottom:25px;transform:translate(-50%,12px);background:var(--new);color:var(--ink);padding:10px 14px;font:500 8px DM Mono;opacity:0;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:850px){.cycle{display:none}.top{grid-template-columns:1fr auto}.habitat{left:27%;right:13%}.intro{left:24px;width:220px}.intro p{display:none}.controls{right:8px}.readout{display:none}}@media(max-width:620px){.top{height:64px;padding:0 15px}.health span{display:none}.intro{top:96px;transform:none;width:190px}.intro h1{font-size:52px;margin:14px 0}.prompt{display:none}.habitat{left:7%;right:18%;top:34%;bottom:8%}.controls button{width:65px}.world:before{font-size:18vw}}
-</style></head><body><main class="world" id="world"><header class="top"><div class="brand"><span class="brand-mark">t.</span><div><b>Digital Terrarium</b><small class="micro">LIVING TEXT / 06</small></div></div><div class="cycle micro" id="clock">CYCLE 001</div><div class="health micro"><i></i><span id="health">LANGUAGE THRIVING</span></div></header><section class="intro"><div class="eyebrow micro">NOT A PICTURE OF A FOREST</div><h1>A habitat<br>made of <em>verbs.</em></h1><p>Every word is alive. Weather changes the vocabulary. Touch a specimen to read it; plant a thought and watch the language adapt.</p><div class="prompt micro"><span>→</span>Touch the living text</div></section><section class="habitat" id="habitat"><div class="forest" id="forest"></div></section><nav class="controls"><button data-action="rain" data-symbol="//">Rain</button><button data-action="night" data-symbol="◐">Night</button><button data-action="seed" data-symbol="+">Plant</button><button data-action="call" data-symbol="~">Call</button><button data-action="reset" data-symbol="↺">Reset</button></nav><aside class="readout micro"><div>Humidity<b id="humidity">78%</b></div><div>Vocabulary<b id="vocab">37</b></div><div>Pulse<b>0.82</b></div></aside><button class="log-button micro" id="logButton"><span>●</span>Field notes / <b id="count">03</b></button><aside class="log" id="log"><header><div><div class="micro">OBSERVATION RECORD</div><h2>The habitat remembers.</h2></div><button id="closeLog">×</button></header><div class="entries" id="entries"></div></aside><article class="card" id="card"><div class="latin micro" id="latin"></div><h2 id="cardTitle"></h2><p id="cardText"></p><footer class="micro"><span id="coord"></span><span>LOGGED</span></footer></article><div class="toast" id="toast"></div></main>
+.controls{display:none}.habitat:before{content:"ECOSYSTEM COMPOSER / SELECT ONE FROM EACH COLUMN"}.habitat:after{content:"OUTPUT CHANGES WITH EVERY COMBINATION"}.composer{position:absolute;inset:35px 0 29px;display:grid;grid-template-rows:1fr auto;overflow:hidden}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);min-height:0}.choice-col{padding:28px 22px;border-right:1px solid #e9eadf20}.choice-col:last-child{border:0}.choice-col header{margin-bottom:22px}.choice-col header span{color:var(--new)}.choice-col h2{font:300 clamp(25px,3vw,44px)/1 Newsreader;margin:7px 0 0}.choice-col button{width:100%;padding:12px 0;border:0;border-bottom:1px solid #e9eadf1d;background:transparent;text-align:left;color:#758078;font:300 clamp(14px,1.6vw,22px) Newsreader;cursor:pointer;transition:.25s}.choice-col button:hover{padding-left:8px;color:var(--paper)}.choice-col button.selected{color:var(--new);padding-left:13px}.choice-col button.selected:before{content:"→ ";font-family:DM Mono;font-size:8px}.report{position:relative;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end;padding:23px 25px;border-top:1px solid #e9eadf2b;background:#131a15}.report small{color:var(--rose)}.report p{font:italic 300 clamp(19px,2.4vw,34px)/1.05 Newsreader;margin:7px 0 0;max-width:650px}.report button{border:1px solid #e9eadf38;background:transparent;padding:11px 14px;cursor:pointer}.report button:hover{background:var(--new);color:var(--ink)}.readout div:nth-child(2) b:after{content:" combinations";font:500 6px DM Mono;color:#7d887f}.intro .eyebrow{color:var(--rose)}@media(max-width:700px){.choice-col{padding:17px 10px}.choice-col h2{font-size:21px}.choice-col button{font-size:13px}.report{padding:15px;grid-template-columns:1fr}.report button{display:none}}
+</style>
+</head>
+<body>
+<main class="world" id="world">
+<header class="top">
+<div class="brand">
+<span class="brand-mark">t.</span>
+<div>
+<b>Digital Terrarium</b>
+<small class="micro">LIVING TEXT / 06</small>
+</div>
+</div>
+<div class="cycle micro" id="clock">CYCLE 001</div>
+<div class="health micro">
+<i>
+</i>
+<span id="health">LANGUAGE THRIVING</span>
+</div>
+</header>
+<section class="intro">
+<div class="eyebrow micro">BUILD A WORLD / WATCH IT RESPOND</div>
+<h1>Compose a<br>small <em>world.</em>
+</h1>
+<p>Choose its climate, its resident, and the strange rule it lives by. Each combination produces a different ecosystem report.</p>
+<div class="prompt micro">
+<span>→</span>Choose three conditions</div>
+</section>
+<section class="habitat" id="habitat">
+<div class="forest" id="forest">
+</div>
+</section>
+<nav class="controls">
+<button data-action="rain" data-symbol="//">Rain</button>
+<button data-action="night" data-symbol="◐">Night</button>
+<button data-action="seed" data-symbol="+">Plant</button>
+<button data-action="call" data-symbol="~">Call</button>
+<button data-action="reset" data-symbol="↺">Reset</button>
+</nav>
+<aside class="readout micro">
+<div>Viability<b id="humidity">94%</b>
+</div>
+<div>Possible<b id="vocab">48</b>
+</div>
+<div>Pulse<b>0.82</b>
+</div>
+</aside>
+<button class="log-button micro" id="logButton">
+<span>●</span>Field notes / <b id="count">03</b>
+</button>
+<aside class="log" id="log">
+<header>
+<div>
+<div class="micro">OBSERVATION RECORD</div>
+<h2>The habitat remembers.</h2>
+</div>
+<button id="closeLog">×</button>
+</header>
+<div class="entries" id="entries">
+</div>
+</aside>
+<article class="card" id="card">
+<div class="latin micro" id="latin">
+</div>
+<h2 id="cardTitle">
+</h2>
+<p id="cardText">
+</p>
+<footer class="micro">
+<span id="coord">
+</span>
+<span>LOGGED</span>
+</footer>
+</article>
+<div class="toast" id="toast">
+</div>
+</main>
 <script>
 const $=s=>document.querySelector(s),forest=$('#forest'),habitat=$('#habitat'),card=$('#card'),lex=[['unfurl','Pteris scriptum','A patient verb. It opens one letter at a time when the light returns.'],['listen','Ausculta minor','A low-growing word that bends toward nearby movement.'],['remember','Memoria viridis','Stores fragments of the last climate cycle in its roots.'],['wander','Errantia lucis','A canopy word carried between brighter sentences.'],['mend','Reparare moss','Colonizes gaps and joins broken phrases.'],['glimmer','Lumen breve','Most visible during the nocturnal cycle.'],['drink','Imbibe caerula','Collects blue rain words before they reach the substrate.'],['become','Mutare perpetua','Never displays the same arrangement twice.'],['hush','Silentia fern','Closes neighboring words when approached too quickly.'],['notice','Observa glasswing','A roaming verb that appears near the cursor.'],['root','Radix typographica','Anchors vocabulary to remembered coordinates.'],['breathe','Respira loop','Regulates the pulse of the textual habitat.']];let murmurs=[],notes=[['unfurl opened three new letters.','UNFURL / 42.31'],['notice crossed the upper sentence.','NOTICE / 68.24'],['mend repaired a quiet gap.','MEND / 55.77']],rainTimer,night=false,cycle=1,vocab=37;const r=(a,b)=>a+Math.random()*(b-a),spec=i=>lex[i%lex.length];
 function build(){forest.innerHTML='';murmurs=[];const phrases=['the rain remembers where it landed','a quiet thing revises itself','light borrows a softer name','nothing here stays singular','the margin begins to breathe','memory migrates toward warmth','a sentence sheds its oldest word','the page notices you noticing','weather enters without knocking','every ending becomes material','the archive dreams in lowercase','somewhere, meaning changes direction','a pause learns how to multiply','the document keeps one secret','touch leaves a temporary grammar','what gathers here becomes alive','the next version is already moving','silence edits from the inside'];for(let i=0;i<phrases.length;i++){let o=document.createElement('div');o.className='organism';o.dataset.revision=`REV ${String(i+1).padStart(2,'0')} / ${spec(i)[1]}`;o.style.cssText=`--x:${r(4,76)}%;--y:${r(5,86)}%;--tone:${i%7===0?'#b9ff63':i%5===0?'#f27d9d':i%4===0?'#6b8cff':'#9eb1a3'};--size:${Math.round(r(13,25))}px;--speed:${r(7,16)}s;--delay:${r(-12,0)}s;--dx:${r(-35,35)}px;--dy:${r(-22,22)}px`;o.innerHTML=`<button data-i="${i}">${phrases[i]}</button>`;forest.appendChild(o)}for(let i=0;i<5;i++){let m=document.createElement('i');m.className='murmur';m.textContent=['draft','erase','inherit','repeat','revise'][i];m.style.cssText=`left:${r(15,80)}%;top:${r(8,75)}%;--flight:${r(10,20)}s;animation-delay:${r(-10,0)}s`;forest.appendChild(m);murmurs.push(m)}forest.querySelectorAll('.organism button').forEach(b=>b.onclick=e=>{let i=+b.dataset.i,words=b.textContent.split(' ');words.push(words.shift());b.textContent=words.join(' ');inspect(e,i)})}build();
-function inspect(e,i){e.stopPropagation();let s=spec(i),rect=habitat.getBoundingClientRect(),c=`${Math.round((e.clientX-rect.left)/rect.width*100)}.${Math.round((e.clientY-rect.top)/rect.height*100)}`;$('#latin').textContent=s[1];$('#cardTitle').textContent=s[0];$('#cardText').textContent=s[2];$('#coord').textContent=c;card.style.left=Math.min(innerWidth-285,e.clientX+15)+'px';card.style.top=Math.max(85,Math.min(innerHeight-190,e.clientY-70))+'px';card.classList.add('show');add(`${s[0]} was touched and briefly changed its rhythm.`,`${s[0].toUpperCase()} / ${c}`);clearTimeout(card.t);card.t=setTimeout(()=>card.classList.remove('show'),4000)}function add(t,p){notes.unshift([t,p]);render();say('The habitat remembered that')}function render(){$('#entries').innerHTML=notes.map((n,i)=>`<article class="entry"><time>${new Date(Date.now()-i*47000).toLocaleTimeString([],{hour12:false})} · CYCLE ${String(cycle).padStart(3,'0')}</time><p>${n[0]}</p><small>${n[1]}</small></article>`).join('');$('#count').textContent=String(notes.length).padStart(2,'0')}render();function say(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(say.t);say.t=setTimeout(()=>$('#toast').classList.remove('show'),1700)}
+function inspect(e,i){e.stopPropagation();let s=spec(i),rect=habitat.getBoundingClientRect(),c=`${Math.round((e.clientX-rect.left)/rect.width*100)}.${Math.round((e.clientY-rect.top)/rect.height*100)}`;$('#latin').textContent=s[1];$('#cardTitle').textContent=s[0];$('#cardText').textContent=s[2];$('#coord').textContent=c;card.style.left=Math.min(innerWidth-285,e.clientX+15)+'px';card.style.top=Math.max(85,Math.min(innerHeight-190,e.clientY-70))+'px';card.classList.add('show');add(`${s[0]} was touched and briefly changed its rhythm.`,`${s[0].toUpperCase()} / ${c}`);clearTimeout(card.t);card.t=setTimeout(()=>card.classList.remove('show'),4000)}function add(t,p){notes.unshift([t,p]);render();say('The habitat remembered that')}function render(){$('#entries').innerHTML=notes.map((n,i)=>`<article class="entry">
+<time>${new Date(Date.now()-i*47000).toLocaleTimeString([],{hour12:false})} · CYCLE ${String(cycle).padStart(3,'0')}</time>
+<p>${n[0]}</p>
+<small>${n[1]}</small>
+</article>`).join('');$('#count').textContent=String(notes.length).padStart(2,'0')}render();function say(t){$('#toast').textContent=t;$('#toast').classList.add('show');clearTimeout(say.t);say.t=setTimeout(()=>$('#toast').classList.remove('show'),1700)}
 function rain(on){if(on)rainTimer=setInterval(()=>{let d=document.createElement('span');d.className='rain-word';d.textContent=['water','fall','soften','drink'][Math.floor(r(0,4))];d.style.cssText=`left:${r(1,99)}%;animation-duration:${r(2.5,5)}s`;forest.appendChild(d);setTimeout(()=>d.remove(),5200)},150);else{clearInterval(rainTimer);rainTimer=null}}document.querySelectorAll('.controls button').forEach(b=>b.onclick=()=>{let a=b.dataset.action;if(a==='rain'){b.classList.toggle('active');rain(!rainTimer);$('#humidity').textContent=rainTimer?'94%':'78%';add(rainTimer?'Rain entered as four repeating words.':'The last rain word reached the substrate.','CLIMATE / RAIN')}if(a==='night'){night=!night;b.classList.toggle('active');$('#world').style.background=night?'#090b16':'#101510';$('#health').textContent=night?'NIGHT LANGUAGE ACTIVE':'LANGUAGE THRIVING';forest.style.filter=night?'hue-rotate(35deg) brightness(.78)':'none';add('Night rearranged the visible vocabulary.','CLIMATE / LIGHT')}if(a==='seed'){let x=r(25,75),y=r(35,75),sp=document.createElement('span');sp.className='spore';sp.textContent=['perhaps','begin','wonder','stay'][Math.floor(r(0,4))];sp.style.cssText=`left:${x}%;top:${y}%`;forest.appendChild(sp);setTimeout(()=>sp.remove(),5100);$('#vocab').textContent=++vocab;add(`${sp.textContent} was planted as a new possibility.`,`NEW WORD / ${Math.round(x)}.${Math.round(y)}`)}if(a==='call'){murmurs.forEach((m,i)=>{m.style.left=(45+i*2)+'%';m.style.top=(35+i%3*4)+'%'});add('The roaming verbs gathered into one loose sentence.','CALL / CENTER')}if(a==='reset'){rain(false);night=false;cycle++;vocab=37;$('#humidity').textContent='78%';$('#vocab').textContent='37';$('#world').style.background='#101510';document.querySelectorAll('.controls button').forEach(x=>x.classList.remove('active'));forest.style.filter='none';build();add('The habitat returned to its first vocabulary.','SYSTEM / RESET')}});habitat.onclick=e=>{let q=document.createElement('span'),rect=habitat.getBoundingClientRect();q.className='spore';q.textContent='notice';q.style.cssText=`left:${e.clientX-rect.left}px;top:${e.clientY-rect.top}px`;forest.appendChild(q);setTimeout(()=>q.remove(),5000)};$('#logButton').onclick=()=>$('#log').classList.toggle('open');$('#closeLog').onclick=()=>$('#log').classList.remove('open');setInterval(()=>$('#clock').textContent=`CYCLE ${String(cycle).padStart(3,'0')} · ${new Date().toLocaleTimeString([],{hour12:false})}`,1000);
-</script></body></html>
+</script>
+<script>
+const composerData={
+ climate:[['perpetual dusk','dusklight'],['warm rain','rain'],['electric fog','fog'],['false spring','spring']],
+ resident:[['a memory moth','moth'],['the last fern','fern'],['a shy weather system','weather'],['a borrowed voice','voice']],
+ rule:[['forgets when observed','forget'],['grows toward music','music'],['changes name at midnight','midnight'],['collects unfinished thoughts','thoughts']]
+};
+const reports={
+ 'dusklight-moth-forget':'At perpetual dusk, the memory moth becomes clearest when no one is looking. Observation is recorded only as a warm absence in the log.',
+ 'rain-fern-music':'Warm rain keeps the last fern awake. It leans toward low frequencies and unfurls one new leaf for every sustained note.',
+ 'fog-weather-midnight':'Inside the electric fog, a shy weather system renames itself at midnight. By morning, its former climate can no longer be reproduced.',
+ 'spring-voice-thoughts':'During false spring, a borrowed voice gathers every thought abandoned nearby and returns them later in an unfamiliar order.'
+};
+let selection={climate:composerData.climate[0],resident:composerData.resident[0],rule:composerData.rule[0]},revision=1;
+function compose(){
+  forest.innerHTML=`<div class="composer"><div class="choice-grid">${Object.entries(composerData).map(([key,items],column)=>`<section class="choice-col"><header><span class="micro">0${column+1} / SELECT</span><h2>${key}</h2></header>${items.map((item,i)=>`<button class="${selection[key][1]===item[1]?'selected':''}" data-group="${key}" data-index="${i}">${item[0]}</button>`).join('')}</section>`).join('')}</div><section class="report"><div><small class="micro">FIELD REPORT / REVISION ${String(revision).padStart(2,'0')}</small><p id="generatedReport"></p></div><button class="micro" id="saveReport">SAVE OBSERVATION</button></section></div>`;
+  forest.querySelectorAll('[data-group]').forEach(button=>button.onclick=e=>{e.stopPropagation();selection[button.dataset.group]=composerData[button.dataset.group][+button.dataset.index];revision++;compose()});
+  let key=[selection.climate[1],selection.resident[1],selection.rule[1]].join('-');
+  $('#generatedReport').textContent=reports[key]||`In ${selection.climate[0]}, ${selection.resident[0]} ${selection.rule[0]}. The resulting habitat remains viable, although its behavior has not appeared in any previous record.`;
+  $('#saveReport').onclick=e=>{e.stopPropagation();add($('#generatedReport').textContent,`COMPOSITION / REV ${String(revision).padStart(2,'0')}`)};
+  $('#health').textContent='COMPOSITION VIABLE';
+}
+compose();
+</script>
+</body>
+</html>
